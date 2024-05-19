@@ -1,0 +1,38 @@
+{
+  "name": "captchakiller",
+  "version": "1.0.0",
+  "description": "CaptchaKiller Node.JS API Client Library, for solving captchas. Cheap recaptcha solver.",
+  "main": "captchakiller.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/captchakillernet/captchakiller-nodejs.git"
+  },
+  "homepage": "https://www.captchakiller.net",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "captchakiller",
+    "captcha killer",
+    "recaptcha v2",
+    "recaptcha v3",
+    "bot",
+    "selenium",
+    "2captcha",
+    "deathbycaptcha",
+    "automation",
+    "solver",
+    "captcha",
+    "recaptcha",
+    "captcha solver",
+    "captcha-solving",
+    "captcha-breaking",
+    "captcha bypass",
+    "captcha automation"
+  ],
+  "author": "CaptchaKiller",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
