@@ -208,6 +208,52 @@ class CaptchaKiller {
         throw new Error(`Error solving captcha: ${error.message}`);
       }
     }
+
+    async solveFuncaptcha(publickey, site, surl = null, datatype = null, _data = null) {
+      try {
+        const params = new URLSearchParams();
+
+        params.append('publickey', publickey);
+        params.append('site', site);
+        
+        // Optional params
+        if (surl) {
+          params.append('surl', surl);
+        }
+
+        if (datatype) {
+          params.append('datatype', datatype);
+        }
+
+        if (_data) {
+          params.append('data', _data);
+        }
+
+        const url = new URL(`${this.baseUrl}/solveark?${params.toString()}`);
+
+        const headers = new Headers();
+
+        headers.append('x-api-key', this.apiKey);
+
+        if (this.partnerId) {
+          headers.append('x-partner-id', this.partnerId);
+        }
+
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: headers,
+          timeout: this.timeout
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(`Error: ${data.errorId} - ${data.error}`);
+        }
+        return data.result;
+      } catch (error) {
+        throw new Error(`Error solving captcha: ${error.message}`);
+      }
+    }
   }
   
   module.exports = { CaptchaKiller };

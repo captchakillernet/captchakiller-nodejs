@@ -1,6 +1,6 @@
 {
   "name": "captchakiller",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "CaptchaKiller Node.JS API Client Library, for solving captchas. Cheap recaptcha solver.",
   "main": "captchakiller.js",
   "repository": {
