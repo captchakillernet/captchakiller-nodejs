@@ -254,6 +254,45 @@ class CaptchaKiller {
         throw new Error(`Error solving captcha: ${error.message}`);
       }
     }
+
+    async solveMTCaptcha(sitekey, site, action) {
+      try {
+        const params = new URLSearchParams();
+
+        params.append('sitekey', sitekey);
+        params.append('site', site);
+        
+        // Optional params
+
+        if (action) {
+          params.append('action', action);
+        }
+
+        const url = new URL(`${this.baseUrl}/solvemtc?${params.toString()}`);
+
+        const headers = new Headers();
+
+        headers.append('x-api-key', this.apiKey);
+
+        if (this.partnerId) {
+          headers.append('x-partner-id', this.partnerId);
+        }
+
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: headers,
+          timeout: this.timeout
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(`Error: ${data.errorId} - ${data.error}`);
+        }
+        return data.result;
+      } catch (error) {
+        throw new Error(`Error solving captcha: ${error.message}`);
+      }
+    }
   }
   
   module.exports = { CaptchaKiller };
