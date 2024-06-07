@@ -255,7 +255,7 @@ class CaptchaKiller {
       }
     }
 
-    async solveMTCaptcha(sitekey, site, action) {
+    async solveMTCaptcha(sitekey, site, action = null) {
       try {
         const params = new URLSearchParams();
 
