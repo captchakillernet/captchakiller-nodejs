@@ -1,6 +1,6 @@
 {
   "name": "captchakiller",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "CaptchaKiller Node.JS API Client Library, for solving captchas. Cheap recaptcha, funcaptcha, mtcaptcha solver.",
   "main": "captchakiller.js",
   "repository": {
@@ -14,6 +14,7 @@
   "keywords": [
     "captchakiller",
     "captcha killer",
+    "captcha solver",
     "recaptcha v2",
     "recaptcha v3",
     "funcaptcha",
@@ -28,7 +29,6 @@
     "solver",
     "captcha",
     "recaptcha",
-    "captcha solver",
     "captcha-solving",
     "captcha-breaking",
     "captcha bypass",
